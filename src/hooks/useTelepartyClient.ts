@@ -67,10 +67,13 @@ export const useTelepartyClient = () => {
                 const roomId = await client.createChatRoom(nickname, userIcon);
                 setRoomId(roomId);
                 console.log("Room created with ID:", roomId);
+                return roomId;
             } catch (error) {
                 console.error("Failed to create room:", error);
+                return null;
             }
         }
+        return roomId ?? null;
     };
 
     const joinRoom = async (

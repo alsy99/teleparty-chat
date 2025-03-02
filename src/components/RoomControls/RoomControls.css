@@ -1,0 +1,47 @@
+/* src/components/RoomControls/RoomControls.css */
+.room-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.create-room,
+.join-room {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-room h2,
+.join-room h2 {
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.room-id-display {
+    margin-top: 10px;
+    padding: 10px;
+    background: #e9f5ff;
+    border-radius: 4px;
+}
