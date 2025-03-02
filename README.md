@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# Teleparty Chat Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simplified real-time chat application built using the `teleparty-websocket-lib` library. This application allows users to create chat rooms, join existing rooms, send messages, and view messages in real-time.
 
-## Available Scripts
+![Demo Screenshot](./screenshot.png) <!-- Add a screenshot if available -->
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+-   **Create Chat Rooms**: Users can create a new chat room with a unique ID.
+-   **Join Chat Rooms**: Users can join an existing chat room using a room ID.
+-   **Real-Time Messaging**: Send and receive messages in real-time using WebSockets.
+-   **User Nickname**: Set a nickname when creating or joining a room.
+-   **User Icon Upload**: Optionally upload a user icon to personalize your profile.
+-   **Typing Indicators**: See when other users are typing in the chat room.
+-   **Previous Messages**: Load all previous messages when joining a room.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-   **React**: Front-end library for building the user interface.
+-   **TypeScript**: Adds static typing to JavaScript for better code quality.
+-   **Teleparty WebSocket Library**: Handles WebSocket communication with the backend.
+-   **GitHub Pages**: Hosts the deployed application.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to set up and run the project locally.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Node.js (v16 or higher)
+-   npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**:
 
-### `npm run eject`
+    ```bash
+    git clone https://github.com/alsy99/teleparty-chat.git
+    cd teleparty-chat
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Install dependencies**:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **Start the development server**:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```bash
+    npm run start
+    ```
 
-## Learn More
+4. **Build the production version**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm run build
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Deploy to GitHub Pages**:
+
+    ```bash
+    npm run deploy
+    ```
+
+6. **Access the application**:
+   Open your browser and navigate to `https://alsy99.github.io/teleparty-chat/`.
