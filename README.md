@@ -2,7 +2,7 @@
 
 A simplified real-time chat application built using the `teleparty-websocket-lib` library. This application allows users to create chat rooms, join existing rooms, send messages, and view messages in real-time.
 
-![Demo Screenshot](./screenshot.png) <!-- Add a screenshot if available -->
+![Demo Screenshot](./screenshot.png)
 
 ## Features
 
