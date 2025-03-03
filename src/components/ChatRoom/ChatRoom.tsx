@@ -4,12 +4,14 @@ import MessageList from "./MessageList";
 import MessageInput from "./MessageInput";
 import TypingIndicator from "./TypingIndicator";
 import { ChatMessage, TypingData } from "../../utils/types";
+import "./ChatRoom.css"; // Add a CSS file for styling
 
 interface ChatRoomProps {
     messages: ChatMessage[];
     typingData: TypingData;
     onSendMessage: (message: string) => void;
     onTyping: (typing: boolean) => void;
+    roomId: string;
 }
 
 const ChatRoom: React.FC<ChatRoomProps> = ({
@@ -17,6 +19,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
     typingData,
     onSendMessage,
     onTyping,
+    roomId,
 }) => {
     const [inputMessage, setInputMessage] = useState("");
 
@@ -28,18 +31,28 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
     };
 
     return (
-        <div>
-            <MessageList messages={messages} />
-            <MessageInput
-                value={inputMessage}
-                onChange={(e) => {
-                    setInputMessage(e.target.value);
-                    onTyping(true);
-                }}
-                onBlur={() => onTyping(false)}
-                onSend={handleSendMessage}
-            />
-            <TypingIndicator typingData={typingData} />
+        <div className="chat-room">
+            <div className="chat-header">
+                <h2>Chat Room</h2>
+                <div className="room-id">
+                    <strong>Room ID:</strong> {roomId}
+                </div>
+            </div>
+            <div className="message-list-container">
+                <MessageList messages={messages} />
+            </div>
+            <div className="message-input-container">
+                <MessageInput
+                    value={inputMessage}
+                    onChange={(e) => {
+                        setInputMessage(e.target.value);
+                        onTyping(true);
+                    }}
+                    onBlur={() => onTyping(false)}
+                    onSend={handleSendMessage}
+                />
+                <TypingIndicator typingData={typingData} />
+            </div>
         </div>
     );
 };
