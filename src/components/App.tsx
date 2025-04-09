@@ -1,5 +1,5 @@
 // src/components/App.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import RoomControls from "./RoomControls/RoomControls";
 import ChatRoom from "./ChatRoom/ChatRoom";
 import { useTelepartyClient } from "../hooks/useTelepartyClient";
@@ -11,11 +11,20 @@ const App: React.FC = () => {
         messages,
         typingData,
         roomId,
+        nickname,
+        error,
         createRoom,
         joinRoom,
         sendMessage,
         handleTyping,
     } = useTelepartyClient();
+
+    // Redirect to the chat room if a session is restored
+    useEffect(() => {
+        if (roomId && nickname) {
+            console.log(`Restored session for room: ${roomId}`);
+        }
+    }, [roomId, nickname]);
 
     return (
         <div className="app-container">
@@ -23,6 +32,7 @@ const App: React.FC = () => {
                 <h1>Teleparty Chat</h1>
             </header>
             <div className="app-content">
+                {error && <div className="error-message">{error}</div>}
                 {!roomId ? (
                     <RoomControls
                         onCreateRoom={createRoom}
