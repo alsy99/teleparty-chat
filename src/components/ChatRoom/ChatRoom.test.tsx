@@ -38,6 +38,7 @@ describe("ChatRoom Component", () => {
                 roomId="12345"
                 onExitRoom={mockOnExitRoom}
                 onTyping={mockOnTyping}
+                nickname="TestUser"
             />
         );
 
@@ -55,6 +56,7 @@ describe("ChatRoom Component", () => {
                 roomId="12345"
                 onExitRoom={mockOnExitRoom}
                 onTyping={mockOnTyping}
+                nickname="TestUser"
             />
         );
 
@@ -71,6 +73,7 @@ describe("ChatRoom Component", () => {
                 roomId="12345"
                 onExitRoom={mockOnExitRoom}
                 onTyping={mockOnTyping}
+                nickname="TestUser"
             />
         );
 
@@ -92,6 +95,7 @@ describe("ChatRoom Component", () => {
                 roomId="12345"
                 onExitRoom={mockOnExitRoom}
                 onTyping={mockOnTyping}
+                nickname="TestUser"
             />
         );
 
@@ -113,9 +117,10 @@ describe("ChatRoom Component", () => {
                 roomId="12345"
                 onExitRoom={mockOnExitRoom}
                 onTyping={mockOnTyping}
+                nickname="TestUser"
             />
         );
 
-        expect(screen.getByText("1 user(s) typing...")).toBeInTheDocument();
+        expect(screen.getByText("Alice is typing...")).toBeInTheDocument();
     });
 });
