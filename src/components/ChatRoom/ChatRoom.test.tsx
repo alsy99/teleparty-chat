@@ -27,6 +27,7 @@ describe("ChatRoom Component", () => {
 
     const mockOnSendMessage = jest.fn();
     const mockOnTyping = jest.fn();
+    const mockOnExitRoom = jest.fn();
 
     it("renders the chat room header with room ID", () => {
         render(
@@ -34,8 +35,9 @@ describe("ChatRoom Component", () => {
                 messages={mockMessages}
                 typingData={mockTypingData}
                 onSendMessage={mockOnSendMessage}
-                onTyping={mockOnTyping}
                 roomId="12345"
+                onExitRoom={mockOnExitRoom}
+                onTyping={mockOnTyping}
             />
         );
 
@@ -50,8 +52,9 @@ describe("ChatRoom Component", () => {
                 messages={mockMessages}
                 typingData={mockTypingData}
                 onSendMessage={mockOnSendMessage}
-                onTyping={mockOnTyping}
                 roomId="12345"
+                onExitRoom={mockOnExitRoom}
+                onTyping={mockOnTyping}
             />
         );
 
@@ -65,8 +68,9 @@ describe("ChatRoom Component", () => {
                 messages={mockMessages}
                 typingData={mockTypingData}
                 onSendMessage={mockOnSendMessage}
-                onTyping={mockOnTyping}
                 roomId="12345"
+                onExitRoom={mockOnExitRoom}
+                onTyping={mockOnTyping}
             />
         );
 
@@ -85,8 +89,9 @@ describe("ChatRoom Component", () => {
                 messages={mockMessages}
                 typingData={mockTypingData}
                 onSendMessage={mockOnSendMessage}
-                onTyping={mockOnTyping}
                 roomId="12345"
+                onExitRoom={mockOnExitRoom}
+                onTyping={mockOnTyping}
             />
         );
 
@@ -105,8 +110,9 @@ describe("ChatRoom Component", () => {
                 messages={mockMessages}
                 typingData={mockTypingData}
                 onSendMessage={mockOnSendMessage}
-                onTyping={mockOnTyping}
                 roomId="12345"
+                onExitRoom={mockOnExitRoom}
+                onTyping={mockOnTyping}
             />
         );
 
