@@ -13,6 +13,7 @@ interface ChatRoomProps {
     onTyping: (typing: boolean) => void;
     roomId: string;
     onExitRoom: () => void;
+    nickname: string;
 }
 
 const ChatRoom: React.FC<ChatRoomProps> = ({
@@ -22,6 +23,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
     onTyping,
     roomId,
     onExitRoom,
+    nickname,
 }) => {
     const [inputMessage, setInputMessage] = useState("");
 
@@ -39,10 +41,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
                 <div className="room-id">
                     <strong>Room ID:</strong> {roomId}
                 </div>
-                <button
-                    className="leave-room-button"
-                    onClick={onExitRoom}
-                >
+                <button className="leave-room-button" onClick={onExitRoom}>
                     Leave Room
                 </button>
             </div>
@@ -59,7 +58,10 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
                     onBlur={() => onTyping(false)}
                     onSend={handleSendMessage}
                 />
-                <TypingIndicator typingData={typingData} />
+                <TypingIndicator
+                    typingData={typingData}
+                    currentUser={nickname || ""}
+                />
             </div>
         </div>
     );

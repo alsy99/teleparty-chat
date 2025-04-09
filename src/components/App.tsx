@@ -53,7 +53,8 @@ const App: React.FC = () => {
                         typingData={typingData}
                         onSendMessage={sendMessage}
                         onTyping={handleTyping}
-                        onExitRoom={exitRoom} // Pass exitRoom to ChatRoom
+                        onExitRoom={exitRoom}
+                        nickname={nickname || ""} // Pass the current user's nickname
                     />
                 )}
             </div>
