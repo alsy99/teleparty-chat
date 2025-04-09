@@ -9,20 +9,11 @@ describe("TypingIndicator Component", () => {
             usersTyping: [],
         };
 
-        render(<TypingIndicator typingData={typingData} />);
+        render(
+            <TypingIndicator typingData={typingData} currentUser="TestUser" />
+        );
 
         expect(screen.queryByText(/typing/i)).not.toBeInTheDocument();
-    });
-
-    it("renders 'Someone is typing...' when anyoneTyping is true but no users are specified", () => {
-        const typingData: TypingData = {
-            anyoneTyping: true,
-            usersTyping: [],
-        };
-
-        render(<TypingIndicator typingData={typingData} />);
-
-        expect(screen.getByText("Someone is typing...")).toBeInTheDocument();
     });
 
     it("renders the correct number of users typing", () => {
@@ -31,7 +22,9 @@ describe("TypingIndicator Component", () => {
             usersTyping: ["Alice", "Bob"],
         };
 
-        render(<TypingIndicator typingData={typingData} />);
+        render(
+            <TypingIndicator typingData={typingData} currentUser="TestUser" />
+        );
 
         expect(screen.getByText("2 user(s) typing...")).toBeInTheDocument();
     });
@@ -42,8 +35,10 @@ describe("TypingIndicator Component", () => {
             usersTyping: ["Alice"],
         };
 
-        render(<TypingIndicator typingData={typingData} />);
+        render(
+            <TypingIndicator typingData={typingData} currentUser="TestUser" />
+        );
 
-        expect(screen.getByText("1 user(s) typing...")).toBeInTheDocument();
+        expect(screen.getByText("Alice is typing...")).toBeInTheDocument();
     });
 });
