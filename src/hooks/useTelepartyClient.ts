@@ -167,6 +167,17 @@ export const useTelepartyClient = () => {
         }
     };
 
+    const exitRoom = () => {
+        if (client) {
+            client.teardown();
+        }
+        setRoomId(null);
+        setNickname(null);
+        localStorage.removeItem("roomId");
+        localStorage.removeItem("nickname");
+        console.log("Exited the chat room.");
+    };
+
     return {
         client,
         messages,
@@ -178,5 +189,6 @@ export const useTelepartyClient = () => {
         joinRoom,
         sendMessage,
         handleTyping,
+        exitRoom,
     };
 };

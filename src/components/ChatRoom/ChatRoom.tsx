@@ -12,6 +12,7 @@ interface ChatRoomProps {
     onSendMessage: (message: string) => void;
     onTyping: (typing: boolean) => void;
     roomId: string;
+    onExitRoom: () => void;
 }
 
 const ChatRoom: React.FC<ChatRoomProps> = ({
@@ -20,6 +21,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
     onSendMessage,
     onTyping,
     roomId,
+    onExitRoom,
 }) => {
     const [inputMessage, setInputMessage] = useState("");
 
@@ -37,6 +39,12 @@ const ChatRoom: React.FC<ChatRoomProps> = ({
                 <div className="room-id">
                     <strong>Room ID:</strong> {roomId}
                 </div>
+                <button
+                    className="leave-room-button"
+                    onClick={onExitRoom}
+                >
+                    Leave Room
+                </button>
             </div>
             <div className="message-list-container">
                 <MessageList messages={messages} />

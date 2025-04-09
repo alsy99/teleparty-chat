@@ -42,3 +42,18 @@
     padding: 5px 10px;
     border-radius: 4px;
 }
+
+.leave-room-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.leave-room-button:hover {
+    background-color: #ff1a1a;
+}

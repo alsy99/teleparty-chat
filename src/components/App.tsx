@@ -17,6 +17,7 @@ const App: React.FC = () => {
         joinRoom,
         sendMessage,
         handleTyping,
+        exitRoom,
     } = useTelepartyClient();
 
     // Redirect to the chat room if a session is restored
@@ -32,7 +33,14 @@ const App: React.FC = () => {
                 <h1>Teleparty Chat</h1>
             </header>
             <div className="app-content">
-                {error && <div className="error-message">{error}</div>}
+                {error && (
+                    <div
+                        className="error-message"
+                        style={{ color: "red", marginBottom: "10px" }}
+                    >
+                        {error}
+                    </div>
+                )}
                 {!roomId ? (
                     <RoomControls
                         onCreateRoom={createRoom}
@@ -45,6 +53,7 @@ const App: React.FC = () => {
                         typingData={typingData}
                         onSendMessage={sendMessage}
                         onTyping={handleTyping}
+                        onExitRoom={exitRoom} // Pass exitRoom to ChatRoom
                     />
                 )}
             </div>
