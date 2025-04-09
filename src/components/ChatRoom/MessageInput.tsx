@@ -14,6 +14,12 @@ const MessageInput: React.FC<MessageInputProps> = ({
     onBlur,
     onSend,
 }) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            onSend();
+        }
+    };
+
     return (
         <div>
             <input
@@ -22,6 +28,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
                 value={value}
                 onChange={onChange}
                 onBlur={onBlur}
+                onKeyDown={handleKeyDown}
             />
             <button onClick={onSend}>Send</button>
         </div>

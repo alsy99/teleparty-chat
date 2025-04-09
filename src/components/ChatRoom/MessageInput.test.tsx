@@ -90,4 +90,20 @@ describe("MessageInput Component", () => {
         const input = screen.getByPlaceholderText("Type a message");
         expect(input).toHaveValue("Test message");
     });
+
+    it("calls onSend when Enter key is pressed in the input field", () => {
+        render(
+            <MessageInput
+                value="Hello"
+                onChange={mockOnChange}
+                onBlur={mockOnBlur}
+                onSend={mockOnSend}
+            />
+        );
+
+        const input = screen.getByPlaceholderText("Type a message");
+        fireEvent.keyDown(input, { key: "Enter", code: 13 });
+
+        expect(mockOnSend).toHaveBeenCalledTimes(1);
+    });
 });
